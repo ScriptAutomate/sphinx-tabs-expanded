@@ -335,8 +335,8 @@ def setup(app):
             else:
                 app.add_stylesheet(path)
         if path.endswith('.js'):
-            if 'add_script_file' in dir(app):
-                app.add_script_file(path)
+            if 'add_js_file' in dir(app):
+                app.add_js_file(path)
             else:
                 app.add_javascript(path)
     app.connect('html-page-context', update_context)

@@ -1,7 +1,11 @@
-sphinx-tabs [![Build Status](https://travis-ci.org/djungelorm/sphinx-tabs.svg?branch=master)](https://travis-ci.org/djungelorm/sphinx-tabs)
+sphinx-tabs-expanded [![Build Status](https://travis-ci.org/djungelorm/sphinx-tabs.svg?branch=master)](https://travis-ci.org/djungelorm/sphinx-tabs)
 ========================================
 
 Create tabbed content in [Sphinx documentation](http://www.sphinx-doc.org) when building HTML.
+
+> **sphinx-tabs-expanded** became a maintained fork of [sphinx-tabs](https://github.com/djungelorm/sphinx-tabs)
+due to PRs being ignored that were needed to keep the extension updated. **sphinx-tabs-expanded** can be
+used as a drop-in package replacement that should work exactly the same, just with additional fixes/enhancement/etc.
 
 For example, see the [Raw] code of [example/index.rst](example/index.rst) which generates the following:
 
@@ -22,9 +26,16 @@ To enable the extension in Sphinx, add the following to your conf.py:
 extensions = ['sphinx_tabs.tabs']
 ```
 
+If needed, there is a configuration option to allow additional builders to be considered compatible. For example, to add the `linkcheck` builder, add the following to your conf.py:
+
+```python
+# Though 'make linkcheck' is supported, this is just an example for other builders
+sphinx_tabs_valid_builders = ['linkcheck']
+```
+
 If you are using [Read The Docs](https://readthedocs.org/) for building your documentation, the extension must be added as a requirement. Please add the following to `requirements.txt` at the root of the project:
 ```
-https://github.com/djungelorm/sphinx-tabs/releases/download/v1.1.12/sphinx-tabs-1.1.13.tar.gz
+https://github.com/scriptautomate/sphinx-tabs-expanded/releases/download/v2.0.0/sphinx-tabs-2.0.0.tar.gz
 ``` 
 
 An example of this can be found [here](https://github.com/djungelorm/sphinx-tabs-rtd-test/blob/master/requirements.txt).
